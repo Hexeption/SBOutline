@@ -23,7 +23,6 @@ jobs:
       - name: Build
         run: chmod +x gradlew && ./gradlew build
       - uses: actions/upload-artifact@v3
-        if: github.event_name == 'workflow_dispatch'
         with:
           name: Compiled-files
           path: build/libs/*.jar
