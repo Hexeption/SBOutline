@@ -1,2 +1,24 @@
-rootProject.name = 'sboutline'
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        maven{ url "https://oss.sonatype.org/content/repositories/snapshots"}
+        maven{ url "https://maven.architectury.dev/"}
+        maven{ url "https://maven.fabricmc.net"}
+        maven{ url "https://maven.minecraftforge.net/"}
+        maven{ url "https://repo.spongepowered.org/maven/"}
+        maven{ url "https://repo.sk1er.club/repository/maven-releases/"}
+        maven { url "https://repo.polyfrost.cc/releases" }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "gg.essential.loom") {
+                useModule("gg.essential:architectury-loom:${requested.version}")
+            }
+        }
+    }
+}
+
+
+rootProject.name = 'SBOutline'
 
